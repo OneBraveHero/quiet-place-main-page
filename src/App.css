@@ -1,38 +1,178 @@
 .App {
   text-align: center;
+  background-color: white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction:; */
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  background-image: url("https://w.forfun.com/fetch/f4/f4b6dd382b9815ed340d123be37c7cdd.jpeg?w=1470&r=0.5625");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  background: transparent;
+  display: grid;
+  justify-content: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 520px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  /* make the effect when the height change */
+  transition: height 0.2s ease;
+  overflow: hidden;
+}
+
+.active {
+  height: 650px;
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+}
+
+.singIn {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+.active .singIn {
+  transition: none;
+  transform: translateX(-400px);
+}
+
+.register {
+  position: absolute;
+  transition: none;
+  transform: translateX(400px);
+}
+
+.active .register {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+  display: grid;
+  justify-content: center;
+}
+
+.form-box h2 {
+  font-size: 2em;
+  color: #162938;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #162938;
+  margin: 30px 0;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  form-size: 1em;
+  color: #162938;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #162938;
+  font-weight: 600;
+}
+
+.remember-forgot {
+  font-size: 0.9em;
+  color: #162938;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forgot label input {
+  accent-color: #162938;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: #162938;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #162938;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.sing-in-register {
+  font-size: 0.9em;
+  color: #162938;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+  color: rgba(0, 0, 0, 0.467);
+}
+
+.register-link {
+  color: rgba(0, 0, 0, 0.823);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link {
+  color: rgba(0, 0, 0, 0.823);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+.login-link:hover {
+  text-decoration: underline;
 }
